@@ -1,0 +1,8 @@
+# ignore all latex files that are not needed
+*.aux
+*.fdb_latexmk
+*.synctex.gz
+*.fls
+*.log
+*.env
+*.DS_Store

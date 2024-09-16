@@ -1,0 +1,111 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+
+\newcommand{\bottomline}{
+    \vspace{1em}
+    \noindent\makebox[\linewidth]{\rule{\textwidth}{0.5pt}}
+}
+% section header
+\newcommand{\sectionheader}[1]{
+    \vspace{-1em}
+    \section*{\centering\bf\normalsize #1} % Centered, large, bold section title
+    \vspace{-1.5em}
+    \noindent\makebox[\linewidth]{\rule{\textwidth}{0.5pt}}
+    \vspace{-1em}
+}
+
+% left-aligned section item
+\newcommand{\sectionitem}[1]{
+    \raggedright#1\par
+}
+
+% include logo
+\newcommand{\logo}[1]{
+    \includegraphics[width=.35cm]{#1}
+}
+
+% label text with shifted description
+\newcommand{\labeltext}[2]{
+    \makebox[0pt][l]{#1}\parbox[t]{\dimexpr\textwidth\relax}{\hangindent=3cm \hspace{3cm}#2}%
+}
+
+% split text into two columns
+\newcommand{\split}[2]{
+    \vspace{.5em}
+    \noindent
+    \makebox[0pt][l]{#1}
+    \hfill
+    \makebox[0pt][r]{#2}
+}
+
+\newcommand{\pushup}[1]{
+    \vspace{-.5em}#1
+}
+
+\begin{document}
+\pagenumbering{gobble}
+
+\begin{center}
+    \textbf{\LARGE Joseph Carlucci} \\
+    carlucci.j@northeastern.edu \textbar{} 978-990-0336 \textbar{} \logo{github_logo.png} joseph-carlucci \textbar{} Boston, MA\\
+    Availability: January - August 2025
+    \vspace{-1em}
+\end{center}
+
+\sectionheader{Education}
+
+\pushup{\sectionitem{\split{\textbf{Northeastern University}, Boston, MA}{September 2023 - Present}}}
+\sectionitem{Khoury College of Computer Sciences}
+\sectionitem{\split{Candidate for \textbf{B.S. in Computer Science and Finance}}{Expected: May 2027}}
+\sectionitem{GPA 3.9/4.0 \textbar{} Dean's List (Fall '23, Spring '24)}
+\sectionitem{\makebox[0pt][l]{Relevant Courses:}\makebox[0pt][l]{\hspace{3cm}Fundamentals of Computer Science 1 \& 2 \textbar{} Algorithms and Data}}
+\sectionitem{\makebox[0pt][l]{\hspace{3cm}Object-Oriented Design \textbar{} Introduction to Databases}}
+
+\sectionheader{Computer Knowledge}
+
+\sectionitem{\labeltext{Languages:}{Java, Python, SQL, HTML, CSS, JavaScript, LaTeX}}
+\sectionitem{\labeltext{Systems:}{MacOS, Windows}}
+\sectionitem{\labeltext{Technologies:}{Git, Jupyter, Polygon, Bloomberg, MS Excel}}
+
+
+
+\sectionheader{Projects}
+
+\pushup{\split{\textbf{AcceleRate}, Startup}{May 2024 - Present}}
+\labeltext{Position:}{Co-Founder}
+\labeltext{Description:}{SaaS startup focused on providing automated quotes for landscaping companies.}
+
+\split{\textbf{Stock Portfolio Manager}}{June 2024 - July 2024}
+\labeltext{Description:}{Integrated AlphaVantage API to retrieve real-time stock data and implemented a portfolio manager with a user-friendly GUI runnable from a JAR file.}
+
+\split{\textbf{GUI Automation}}{September 2023 - November 2023}
+\labeltext{Description:}{Leveraged GUI packages with image recognition developed from scratch to automate dynamic tasks.}
+
+\sectionheader{Extracurricular Activities}
+
+\split{\textbf{Student Value Fund}, Northeastern University}{September 2023 - Present}
+\labeltext{Position:}{Analyst}
+\labeltext{Description:}{Completed semester-long junior analyst program, experience in financial modeling, constructing Discounted Cash Flow models, and comprehensive market research.}
+
+\sectionheader{Extracurricular Activities}
+
+\split{\textbf{Student Value Fund}, Northeastern University}{September 2023 - Present}
+\labeltext{Position:}{Analyst}
+\labeltext{Description:}{Completed semester-long junior analyst program, experience in financial modeling, constructing Discounted Cash Flow models, and comprehensive market research.}
+
+\bottomline
+
+\labeltext{\textbf{Interests:}}{Interest 1, Interest 2, Interest 3, Interest 4, Interest 5}
+
+% \begin{itemize}
+%     \item Artificial Intelligence and Machine Learning
+%     \item Web Development
+%     \item Algorithmic Trading
+%     \item Skiing
+%     \item Entrepreneurship
+% \end{itemize}
+
+
+\end{document}
