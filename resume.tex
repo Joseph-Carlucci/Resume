@@ -1,18 +1,24 @@
 \documentclass{article}
 \usepackage{graphicx}
 \usepackage{geometry}
-\geometry{a4paper, margin=1in}
+\usepackage{enumitem}
+\usepackage[none]{hyphenat}
+
+\geometry{a4paper, margin=.5in}
+
+\newcommand{\xline}{
+    \noindent\makebox[\linewidth]{\rule{\textwidth}{1pt}}
+}
 
 \newcommand{\bottomline}{
-    \vspace{1em}
-    \noindent\makebox[\linewidth]{\rule{\textwidth}{0.5pt}}
+    \xline
 }
 % section header
 \newcommand{\sectionheader}[1]{
     \vspace{-1em}
     \section*{\centering\bf\normalsize #1} % Centered, large, bold section title
     \vspace{-1.5em}
-    \noindent\makebox[\linewidth]{\rule{\textwidth}{0.5pt}}
+    \xline
     \vspace{-1em}
 }
 
@@ -28,7 +34,7 @@
 
 % label text with shifted description
 \newcommand{\labeltext}[2]{
-    \makebox[0pt][l]{#1}\parbox[t]{\dimexpr\textwidth\relax}{\hangindent=3cm \hspace{3cm}#2}%
+    \makebox[0pt][l]{#1}\parbox[t]{\dimexpr\textwidth\relax}{\hangindent=3cm \raggedright\hspace{3cm}#2}%
 }
 
 % split text into two columns
@@ -56,56 +62,71 @@
 
 \sectionheader{Education}
 
-\pushup{\sectionitem{\split{\textbf{Northeastern University}, Boston, MA}{September 2023 - Present}}}
-\sectionitem{Khoury College of Computer Sciences}
-\sectionitem{\split{Candidate for \textbf{B.S. in Computer Science and Finance}}{Expected: May 2027}}
+\pushup{\sectionitem{\split{\textbf{NORTHEASTERN UNIVERSITY}, Khoury College of Computer Sciences}{Boston, MA}}}
+\pushup{\sectionitem{\split{Candidate for B.S. in Computer Science and Finance}{Expected: May 2027}}}
 \sectionitem{GPA 3.9/4.0 \textbar{} Dean's List (Fall '23, Spring '24)}
-\sectionitem{\makebox[0pt][l]{Relevant Courses:}\makebox[0pt][l]{\hspace{3cm}Fundamentals of Computer Science 1 \& 2 \textbar{} Algorithms and Data}}
-\sectionitem{\makebox[0pt][l]{\hspace{3cm}Object-Oriented Design \textbar{} Introduction to Databases}}
+\labeltext{Relevant Courses:}{Fundamentals of Computer Science 1 \& 2 \textbar{} Algorithms and Data \textbar{} Object-Oriented Design Introduction to Databases \textbar{} Discrete Structures \textbar{} Financial Accounting \textbar{} Financial Management}
+\sectionitem{\makebox[0pt][l]{\hspace{3cm}}}
 
 \sectionheader{Computer Knowledge}
 
 \sectionitem{\labeltext{Languages:}{Java, Python, SQL, HTML, CSS, JavaScript, LaTeX}}
 \sectionitem{\labeltext{Systems:}{MacOS, Windows}}
-\sectionitem{\labeltext{Technologies:}{Git, Jupyter, Polygon, Bloomberg, MS Excel}}
+\sectionitem{\labeltext{Technologies:}{Git, Jupyter, Polygon, Django, MYSQL, MSExcel, Bloomberg}}
 
+\sectionheader{Experience}
 
+\pushup{\sectionitem{\split{\textbf{FINANCIAL RESEARCH VOLUNTEER}}{September 2024 - Present}}}
+\pushup{\sectionitem{\split{Northeastern University}{Boston, MA}}}
+\begin{itemize}[itemsep=-3pt, topsep=1pt]
+    \item Leveraged Google BigQuery to query and analyze a dataset of over 7.5 million patents, enhancing research insights into patent similarity
+    \item Ensured data integrity through validation and troubleshooting, supporting the reliability of research outcomes
+\end{itemize}
+
+\sectionitem{\split{\textbf{ADMINISTRATIVE PROCESSES AUTOMATION}}{August 2024}}
+\pushup{\sectionitem{\split{Baystate Academy Charter Public School}{Springfield, MA}}}
+\begin{itemize}[itemsep=-3pt, topsep=1pt]
+    \item Developed a custom automation solution using Google Apps Script to streamline Google Form response email workflows from Google Sheets
+    \item Implemented a data aggregation algorithm in Google Sheets using Google Apps Script to efficiently compile data for reliable annual reporting
+\end{itemize}
 
 \sectionheader{Projects}
 
-\pushup{\split{\textbf{AcceleRate}, Startup}{May 2024 - Present}}
-\labeltext{Position:}{Co-Founder}
-\labeltext{Description:}{SaaS startup focused on providing automated quotes for landscaping companies.}
+\pushup\sectionitem{{\split{\textbf{ACCELERATE}}{May 2024 - Present}}}
+\sectionitem{Startup Co-Founder}
+\begin{itemize}[itemsep=-3pt, topsep=1pt]
+    \item Developed a responsive front-end, integrating Google Maps Address Autofill, Maps Static, and Drawing Manager APIs to automate quote criteria collection for landscaping companies
+\end{itemize}
 
-\split{\textbf{Stock Portfolio Manager}}{June 2024 - July 2024}
-\labeltext{Description:}{Integrated AlphaVantage API to retrieve real-time stock data and implemented a portfolio manager with a user-friendly GUI runnable from a JAR file.}
+\split{\textbf{STOCK PORTFOLIO MANAGER}}{June 2024 - July 2024}
+\begin{itemize}[itemsep=-3pt, topsep=1pt]
+    \item Integrated AlphaVantage API to retrieve real-time stock data and implemented a mock portfolio manager with a user-friendly GUI, runnable from a JAR file
+\end{itemize}
 
-\split{\textbf{GUI Automation}}{September 2023 - November 2023}
-\labeltext{Description:}{Leveraged GUI packages with image recognition developed from scratch to automate dynamic tasks.}
+\split{\textbf{GUI TASK AUTOMATION}}{September 2023 - November 2023}
+\begin{itemize}[itemsep=-3pt, topsep=1pt]
+    \item Utilized Python GUI packages to automate dynamic tasks by capturing screen screenshots, processing images for data extraction and programmatically controlling mouse movements
+\end{itemize}
+
 
 \sectionheader{Extracurricular Activities}
 
-\split{\textbf{Student Value Fund}, Northeastern University}{September 2023 - Present}
-\labeltext{Position:}{Analyst}
-\labeltext{Description:}{Completed semester-long junior analyst program, experience in financial modeling, constructing Discounted Cash Flow models, and comprehensive market research.}
+\pushup{\sectionitem{\split{\textbf{NORTHEASTERN STUDENT VALUE FUND}}{February 2024 - Present}}}
+\sectionitem{Analyst}
+\begin{itemize}[itemsep=-3pt, topsep=1pt]
+    \item Completed semester-long junior analyst program, gaining experience in financial modeling, constructing DCF models, and comprehensive market research
+    \item Conducting in-depth research on an analyst team to identify and pitch value stock investment opportunities to the fund- total portfolio value is approximately \$270k of the university's endowment
+\end{itemize}
 
-\sectionheader{Extracurricular Activities}
+\sectionitem{\split{\textbf{NORTHEASTERN REV}}{September 2024 - Present}}
+\sectionitem{Member}
+\begin{itemize}[itemsep=-3pt, topsep=1pt]
+    \item Accepted into Fall '24 cohort of venture accelerator program, to work on AcceleRate Startup
+    \item Participating in weekly workshops and mentorship sessions to develop entrepreneurial skills and refine business model, as well as give feedback to other startups in the program
+\end{itemize}
 
-\split{\textbf{Student Value Fund}, Northeastern University}{September 2023 - Present}
-\labeltext{Position:}{Analyst}
-\labeltext{Description:}{Completed semester-long junior analyst program, experience in financial modeling, constructing Discounted Cash Flow models, and comprehensive market research.}
 
 \bottomline
-
-\labeltext{\textbf{Interests:}}{Interest 1, Interest 2, Interest 3, Interest 4, Interest 5}
-
-% \begin{itemize}
-%     \item Artificial Intelligence and Machine Learning
-%     \item Web Development
-%     \item Algorithmic Trading
-%     \item Skiing
-%     \item Entrepreneurship
-% \end{itemize}
-
+\labeltext{\textbf{Interests:}}{Web development, Algorithmic Trading, Entrepreneurship, Skiing, Machine Learning}
 
 \end{document}
